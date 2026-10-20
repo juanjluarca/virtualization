@@ -4,6 +4,8 @@ namespace: argocd-jjlr
 resources:
   - namespace.yaml
   - ingressroute.yaml
+  - repository.yaml
+  - applications.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.5.5/manifests/install.yaml
 patches:
   - target:
