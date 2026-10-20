@@ -1,0 +1,16 @@
+alertmanager:
+  enabled: false
+
+prometheus-pushgateway:
+  enabled: false
+
+scrapeConfigs:
+  prometheus-pushgateway:
+    enabled: false
+  kubernetes-services:
+    enabled: false
+  kubernetes-pods:
+    pre_relabel_configs: |
+      - source_labels: [__meta_kubernetes_namespace]
+        action: drop
+        regex: metallb-system
